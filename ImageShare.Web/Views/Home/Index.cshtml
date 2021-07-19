@@ -1,0 +1,17 @@
+﻿@using ImageShare.Data
+@model HomeViewModel
+
+<div class="row">
+    <div class="col-md-8 offset-md-2">
+        @foreach (var image in Model.Images)
+        {
+            <div class="jumbotron" style="margin-bottom: 20px; text-align: center;">
+                <a href="/Home/ViewImage?id=@image.Id">
+                    <h3>@image.Title</h3>
+                    <img src="~/Uploads/@image.FileName" style="width: 500px;" />
+                    <h5>Uploaded at: @image.Uploaded.ToShortDateString()</h5>
+                </a>
+                </div>
+                }
+            </div>
+        </div>
